@@ -1,0 +1,34 @@
+/* body styles */
+
+body {
+    padding-top: 60px;
+    font-family: 'Helvetica';
+    background-color: #ffffff;
+}
+
+.content {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* navbar styling */
+.navbar {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    font-family: 'Open sans', sans-serif !important;
+    background-color: #D4D4D4 !important;
+}
+
+/* collapsible_table styles */
+
+.blank-row {
+    padding: 0px !important;
+    line-height: 0px !important;
+    border-top: none !important;
+}
+
+.card-style {
+  padding: 5px;
+}

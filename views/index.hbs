@@ -1,0 +1,22 @@
+<div>
+  <h1 style="text-align: center;"> Jobs </h1>
+  <ul>
+    {{#each response.data}}
+      <div class="card card-style" style="width: 60rem; border: 1px solid black; display: flex; flex-direction: row;">
+        <img class="mw-25 h-25" src="{{this.company_logo}}" style="width: 10rem;">
+        <span class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text"><i class="fa fa-briefcase"></i> {{this.company}}</p>
+          <a href="/individual?id={{this.id}}" class="btn btn-primary" style="float: right;">More Details</a>
+          <p class="card-text"><i class="fa fa-file"></i> {{this.type}}</p>
+          <p class="card-text"><i class="fa fa-map-marker"></i>  {{this.location}}</p>
+        </span>
+      </div>
+      <div style="display: block; margin: 5px;">
+
+      </div>
+    {{/each}}
+  </ul>
+
+  {{> pagination}}
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "twineinterview",
+  "version": "1.0.0",
+  "description": "App for Twine Interview",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crestwood204/TwineInterview.git"
+  },
+  "author": "Andrew Ong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crestwood204/TwineInterview/issues"
+  },
+  "homepage": "https://github.com/crestwood204/TwineInterview#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.12",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.5",
+    "path": "^0.12.7"
+  }
+}
