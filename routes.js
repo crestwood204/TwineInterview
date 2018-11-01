@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     // User Malformed Input
     page = 1;
   }
-  axios.get(`http://jobs.github.com/positions.json?page=${page}`)
+  axios.get(`http://jobs.github.com/positions.json?page=${page - 1}`)
     .then(function(response) {
       // response.data is 50 jobs response.data[0] is first job
       res.render('index', { response, page });
@@ -27,6 +27,48 @@ router.get('/individual', (req, res) => {
     .catch(function(error) {
       console.log(error);
     });
+});
+
+router.get('/analytics', (req, res) => {
+  const { location } = req.query;
+  console.log(location);
+  async function fetchAnalytics() {
+    const languages = ['javascript', 'python', 'java'];
+    const counts = [];
+    let page = 0;
+    for (let i = 0; i < languages.length; i++) {
+      let count = 0;
+      let page = 0;
+      while (true) {
+        let query = '';
+        if (location) {
+          query = `http://jobs.github.com/positions.json?page=${page}&description=${languages[i]}&location=${location}`;
+        } else {
+          query = `http://jobs.github.com/positions.json?page=${page}&description=${languages[i]}`;
+        }
+        const response = await axios.get(query);
+        data = await response.data;
+        if (data.length === 0) {
+          break;
+        }
+        count += data.length;
+        page += 1;
+      }
+      counts.push([languages[i], count]);
+    }
+
+    counts.sort((a, b) => {
+      return b[1] - a[1];
+    })
+    res.render('analytics', {
+      first: counts[0],
+      second: counts[1],
+      third: counts[2],
+      location
+    });
+  }
+
+  fetchAnalytics();
 });
 
 module.exports = router;

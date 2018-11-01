@@ -1,0 +1,28 @@
+<h1 class="offset-sm-2"> Job Listings by Programming Language: </h1>
+<div class="container">
+  <form class="offset-sm-3">
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Location</label>
+      <div class="col-sm-5">
+        <input id="location" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="{{location}}">
+      </div>
+      <button id="location-search" class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button>
+    </div>
+  </form>
+</div>
+
+<div class="offset-sm-4">
+  <ul>
+    <li>
+      {{ first.[0] }} : {{ first.[1] }}
+    </li>
+    <li>
+      {{ second.[0] }} : {{ second.[1] }}
+    </li>
+    <li>
+      {{ third.[0] }} : {{ third.[1] }}
+    </li>
+  </ul>
+</div>
+
+<script src="/js/analytics.js"></script>
