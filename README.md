@@ -10,7 +10,7 @@ In addition, I would have liked to include the twine favicon.ico, but couldn't f
 The app is currently hosted on heroku: https://dreadful-eyeballs-53760.herokuapp.com/
 
 If you want to run it locally:
-  1. clone the App from github
+  1. clone the App from github: https://github.com/crestwood204/TwineInterview
   2. cd to the directory
   3. run "npm install" to install the necessary dependencies
   4. run "node start" to start the application
